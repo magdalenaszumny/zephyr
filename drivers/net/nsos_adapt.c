@@ -882,12 +882,7 @@ int nsos_adapt_getsockname(int fd, struct nsos_mid_sockaddr *addr_mid, size_t *a
 		return -nsi_errno_to_mid(errno);
 	}
 
-	err = sockaddr_to_nsos_mid(addr, addrlen, addr_mid, addrlen_mid);
-	if (err) {
-		return err;
-	}
-
-	return 0;
+	return sockaddr_to_nsos_mid(addr, addrlen, addr_mid, addrlen_mid);
 }
 
 #define MAP_POLL_EPOLL(_event_from, _event_to)	\
